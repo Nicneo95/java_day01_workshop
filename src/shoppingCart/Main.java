@@ -15,16 +15,16 @@ public class Main {
         Boolean stop = false;
         
         System.out.println("Welcome to your shopping cart");
-
+        // while is not stop run the code block inside 
         while (!stop) {
-            // 
+            // 1. run line by line 
             String line = cons.readLine("> ");
-            // command line delimited by space
+            // command line remove any spaces from and back of the words
             line = line.trim();
             // add apple => ["add", "apple"]
             // list => ["list"]
             String[] terms = line.split(" ");
-
+            // terms[0] is the command line a
             switch (terms[0]) {
                 case "list":
                     if (cart.size() <= 0) {
@@ -32,6 +32,7 @@ public class Main {
                     } else {
                         System.out.println("The contents of your cart");
                         for (Integer idx = 0; idx < cart.size(); idx++)
+                        // idx + 1 so it display 1. 2. 3. instead of starting with 0.
                             System.out.printf("%d. %s\n", idx + 1, cart.get(idx));
                     }
                     break;
